@@ -1,0 +1,166 @@
+PS C:\Users\fnypk> mkdir git_challenge
+
+
+    ディレクトリ: C:\Users\fnypk
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2024/06/26      6:44                git_challenge  
+
+
+PS C:\Users\fnypk> cd .\git_challenge\
+PS C:\Users\fnypk\git_challenge> New-Item hellow_world,txt   
+
+
+    ディレクトリ: C:\Users\fnypk\git_challenge
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        2024/06/26      6:45              0 hellow_world   
+-a----        2024/06/26      6:45              0 txt
+
+
+PS C:\Users\fnypk\git_challenge> mv hellow_world,txt hellow_world.txt
+mv : 既に存在するファイルを作成することはできません。
+発生場所 行:1 文字:1
++ mv hellow_world,txt hellow_world.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (C:\Users\fnypk\git_ch 
+   allenge\txt:FileInfo) [Move-Item], IOException
+    + FullyQualifiedErrorId : MoveFileInfoItemIOError,Microsoft. 
+   PowerShell.Commands.MoveItemCommand
+ 
+PS C:\Users\fnypk\git_challenge> ls -1a
+ls : パス 'C:\Users\fnypk\git_challenge\-1a' が存在しないため検出
+できません。
+発生場所 行:1 文字:1
++ ls -1a
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\fnypk\gi 
+   t_challenge\-1a:String) [Get-ChildItem], ItemNotFoundExcepti  
+  on
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.  
+   Commands.GetChildItemCommand
+
+PS C:\Users\fnypk\git_challenge> ls
+
+
+    ディレクトリ: C:\Users\fnypk\git_challenge
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        2024/06/26      6:45              0 hellow_world.tx 
+                                                  t
+-a----        2024/06/26      6:45              0 txt
+
+
+PS C:\Users\fnypk\git_challenge> rm .txt
+rm : パス 'C:\Users\fnypk\git_challenge\.txt' が存在しないため検
+出できません。
+発生場所 行:1 文字:1
++ rm .txt
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\fnypk\gi  
+   t_challenge\.txt:String) [Remove-Item], ItemNotFoundExceptio   
+  n
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.  
+   Commands.RemoveItemCommand
+
+PS C:\Users\fnypk\git_challenge> rm txt
+PS C:\Users\fnypk\git_challenge> echo 'Hellow, world' > hellow_world.txt
+PS C:\Users\fnypk\git_challenge> echo 'Hellow, world!' > hellow_world.txt
+PS C:\Users\fnypk\git_challenge> git init
+Initialized empty Git repository in C:/Users/fnypk/git_challenge/.git/
+PS C:\Users\fnypk\git_challenge> git add .\hellow_world.txt
+PS C:\Users\fnypk\git_challenge> git commit -m "hellow_world.txtを追加"
+[main (root-commit) ae14eb2] hellow_world.txtを追加
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 hellow_world.txt
+PS C:\Users\fnypk\git_challenge> echo 'Hellow, world!' > hellow_world.txt
+PS C:\Users\fnypk\git_challenge> 
+PS C:\Users\fnypk\git_challenge> echo 'Hellow, world!こんにちは、'
+世界！' > hellow_world.txt
+PS C:\Users\fnypk\git_challenge> cho -e 'Hellow, world!\nこんにち 
+は、世界！' >.\hellow_world.txt
+cho : 用語 'cho' は、コマンドレット、関数、スクリプト ファイル、
+または操作可能なプログラムの名前として認識されません。名前が正し  
+く記述されていることを確認し、パスが含まれている場合はそのパスが  
+正しいことを確認してから、再試行してください。
+発生場所 行:1 文字:1
++ cho -e 'Hellow, world!\nこんにちは、世界！' >.\hellow_world.txt 
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (cho:String) [], C  
+   ommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\fnypk\git_challenge> echo -e 'Hellow, world!\nこんにち
+
+>> は、世界！' >.\hellow_world.txt
+Write-Output : パラメーター名 'e' があいまいなため、パラメーター
+を処理できません。一致する名前の候補は次のとおりです:  -ErrorActi 
+on -ErrorVariable。
+発生場所 行:1 文字:6
++ echo -e 'Hellow, world!\nこんにち
++      ~~
+    + CategoryInfo          : InvalidArgument: (:) [Write-Output  
+   ]、ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameter,Microsoft.Power  
+   Shell.Commands.WriteOutputCommand
+
+PS C:\Users\fnypk\git_challenge> echo -e "Hellow, world!\nこんにちは、世界！" > hellow_world.txt
+Write-Output : パラメーター名 'e' があいまいなため、パラメーター
+を処理できません。一致する名前の候補は次のとおりです:  -ErrorActi 
+on -ErrorVariable。
+発生場所 行:1 文字:6
++ echo -e "Hellow, world!\nこんにちは、世界！" > hellow_world.txt 
++      ~~
+    + CategoryInfo          : InvalidArgument: (:) [Write-Output  
+   ]、ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameter,Microsoft.Power  
+   Shell.Commands.WriteOutputCommand
+
+PS C:\Users\fnypk\git_challenge> echo "Hellow, world!\nこんにちは 、世界！" > hellow_world.txt t 
+PS C:\Users\fnypk\git_challenge> echo -e "Hellow, world!\nこんにちは、世界！" > hellow_world.txt
+Write-Output : パラメーター名 'e' があいまいなため、パラメーター
+を処理できません。一致する名前の候補は次のとおりです:  -ErrorActi 
+on -ErrorVariable。
+発生場所 行:1 文字:6
++ echo -e "Hellow, world!\nこんにちは、世界！" > hellow_world.txt 
++      ~~
+    + CategoryInfo          : InvalidArgument: (:) [Write-Output  
+   ]、ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameter,Microsoft.Power  
+   Shell.Commands.WriteOutputCommand
+
+PS C:\Users\fnypk\git_challenge> echo "Hellow, world!'nこんにちは 、世界！" > hellow_world.txt 
+PS C:\Users\fnypk\git_challenge> echo "Hellow, world!' 'nこんにち は 、世界！" > hellow_world.txt 
+PS C:\Users\fnypk\git_challenge>  echo "Hellow, world!''n'こんにち は 、世界！" > hellow_world.txt                                  
+PS C:\Users\fnypk\git_challenge> cho "Hellow, world! ''n'こんにち は 、世界！" > hellow_world.txt  
+cho : 用語 'cho' は、コマンドレット、関数、スクリプト ファイル、
+または操作可能なプログラムの名前として認識されません。名前が正し  
+く記述されていることを確認し、パスが含まれている場合はそのパスが  
+正しいことを確認してから、再試行してください。
+発生場所 行:1 文字:1
++ cho "Hellow, world! ''n'こんにち は 、世界！" > hellow_world.tx 
+t
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (cho:String) [], C  
+   ommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\fnypk\git_challenge> echo "Hellow, world! ''n'こんにち
+ は 、世界！" > hellow_world.txt  
+PS C:\Users\fnypk\git_challenge> echo "Hello, world!`nこんにちは、世界！" > hellow_world.txt t t t
+PS C:\Users\fnypk\git_challenge> git add .\hellow_world.txt
+PS C:\Users\fnypk\git_challenge> git commit -m "日本語訳を追記"
+[main c039be6] 日本語訳を追記
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+PS C:\Users\fnypk\git_challenge> git status
+On branch main
+nothing to commit, working tree clean
+PS C:\Users\fnypk\git_challenge> git log --oneline
+c039be6 (HEAD -> main) 日本語訳を追記
+ae14eb2 hellow_world.txtを追加
